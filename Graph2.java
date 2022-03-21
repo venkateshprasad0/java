@@ -3,7 +3,7 @@
 import java.io.*;
 import java.util.*;
 
-class Graph2 {
+class Graph {
     // Utility function to check if current
 // vertex is already present in path
     private static boolean isNotVisited(int x,
@@ -64,7 +64,7 @@ class Graph2 {
             g.add(new ArrayList<>());
         }
 
-
+        int a=-1;
         for(int i=0;i<=v;i++) {
 
             String line = s.nextLine();
@@ -81,16 +81,27 @@ class Graph2 {
                 }
             }
 
-            for (int q : numbers) {
+            if(numbers.isEmpty()) a++;
+            else {
+                for (int q : numbers) {
 
-                if (q >= 0) g.get(i).add(q);
+                    if
+                    (q >= 0) g.get(a).add(q);
+                    else
+                        a++;
+                }
+
+                a++;
             }
+            //System.out.println(g.get(i));
         }
 
 
             int src = 0, dst = v - 1;
             // Function for finding the paths
             findpaths(g, src, dst, v);
+        System.out.println(g);
+
 
     }
 }
